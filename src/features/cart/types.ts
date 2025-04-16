@@ -6,5 +6,6 @@ export type Product = {
 
 export type CartState = {
   items: Product[];
-  total: number;
+  totalSum: number,
+  totalAmount: number
 }

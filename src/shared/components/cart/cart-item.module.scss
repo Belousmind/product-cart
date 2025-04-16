@@ -1,0 +1,56 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.cart-item-title {
+  @include text-preset-4-bold;
+  color: $rose-900;
+  grid-column: span 3;
+}
+
+.cart-item-amount {
+  @include text-preset-4-bold;
+  color: $red;
+}
+
+.price {
+  @include text-preset-4-normal;
+  color: $rose-500;
+}
+
+.total-sum {
+  @include text-preset-4-bold;
+  color: $rose-500;
+}
+
+.item-info {
+  display: grid;
+  gap: $space-100;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+}
+
+.button {
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  outline: none;
+  svg {
+    cursor: pointer;
+  }
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-200 0;
+  border-bottom: 1px $rose-100 solid;
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    padding-bottom: 0;
+    border: none;
+  }
+}

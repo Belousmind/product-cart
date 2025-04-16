@@ -16,7 +16,7 @@ export default defineConfig({
       "@svg": path.resolve(__dirname, "./src/assets/svg"),
       "@cart": path.resolve(__dirname, "./src/features/cart"),
       "@components": path.resolve(__dirname, "./src/shared/components"),
-      "@style": path.resolve(__dirname, "./src/assets/style")
+      "@style": path.resolve(__dirname, "./src/style")
     }
   }
 })

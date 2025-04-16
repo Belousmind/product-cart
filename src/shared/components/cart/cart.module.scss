@@ -1,0 +1,91 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.cart {
+  @include flex-coloumn;
+  gap: $space-300;
+  padding: $space-300;
+  background: $white;
+  border-radius: $space-150;
+}
+
+.title {
+  color: $red;
+  @include text-preset-2;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-200;
+  padding: $space-200 0px;
+}
+
+.empty-text {
+  @include text-preset-4-bold;
+  color: $rose-500;
+}
+
+.total-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $rose-900;
+}
+
+.total-title {
+  @include text-preset-4-normal;
+}
+
+.total-sum {
+  @include text-preset-2;
+}
+
+.carbon-container {
+  @include flex-center;
+  gap: $space-100;
+  padding: $space-200;
+  border-radius: $space-100;
+  background: $rose-50;
+  color: $rose-900;
+}
+
+.carbon-text {
+  @include text-preset-4-normal;
+}
+
+.carbon-text-accent {
+  @include text-preset-4-bold;
+}
+
+.button-primary {
+  @include flex-center;
+  @include text-preset-3;
+  width: 100%;
+  padding: $space-200 $space-300;
+  border: none;
+  outline: none;
+  background: $red;
+  color: $white;
+  border-radius: 999px;
+  &:hover {
+    background:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%),
+      $red;
+  }
+}
+
+.cart-content {
+  @include flex-coloumn;
+  gap: $space-300;
+}
+
+.cart-list {
+  border-bottom: 1px $rose-100 solid;
+  padding-bottom: $space-300;
+  &:last-child {
+    border: none;
+    padding: 0;
+  }
+}

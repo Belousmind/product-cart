@@ -3,7 +3,8 @@ import { CartState } from './types'
 
 const initialState: CartState = {
   items: [],
-  total: 0,
+  totalSum: 0,
+  totalAmount: 0
 }
 
 function recalculateTotal(items: CartState['items']) {
@@ -24,7 +25,8 @@ const cartSlice = createSlice({
     ) => {
       const product = action.payload
       state.items.push({ ...product, amount: 1 })
-      state.total = recalculateTotal(state.items)
+      state.totalSum = recalculateTotal(state.items)
+      state.totalAmount = state.items.length;
     },
     incrimentItem: (state, action: PayloadAction<string>) => {
       const name = action.payload
@@ -32,7 +34,7 @@ const cartSlice = createSlice({
 
       if (existing) {
         existing.amount += 1
-        state.total = recalculateTotal(state.items)
+        state.totalSum = recalculateTotal(state.items)
       }
     },
     decrimentItem: (state, action: PayloadAction<string>) => {
@@ -41,7 +43,7 @@ const cartSlice = createSlice({
 
       if (existing) {
         existing.amount -= 1
-        state.total = recalculateTotal(state.items)
+        state.totalSum = recalculateTotal(state.items)
       }
     },
   },

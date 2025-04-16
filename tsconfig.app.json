@@ -20,8 +20,8 @@
       "@components": ["src/shared/components"],
       "@components/*": ["src/shared/components/*"],
 
-      "@style": ["src/assets/style"],
-      "@style/*": ["src/assets/style/*"]
+      "@style": ["src/style"],
+      "@style/*": ["src/style/*"]
     },
 
     /* Bundler mode */
