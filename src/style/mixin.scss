@@ -1,0 +1,47 @@
+@use './variables.scss';
+
+@mixin text-preset-1 {
+  font-size: variables.$text-size-1;
+  line-height: variables.$text-height-120;
+  font-weight: variables.$text-weight-700;
+}
+
+@mixin text-preset-2 {
+  font-size: variables.$text-size-2;
+  line-height: variables.$text-height-125;
+  font-weight: variables.$text-weight-700;
+}
+
+@mixin text-preset-3 {
+  font-size: variables.$text-size-3;
+  line-height: variables.$text-height-150;
+  font-weight: variables.$text-weight-600;
+}
+
+@mixin text-preset-4 {
+  font-size: variables.$text-size-4;
+  line-height: variables.$text-height-150;
+}
+
+@mixin text-preset-4-normal {
+  @include text-preset-4;
+  font-weight: variables.$text-weight-400;
+}
+
+@mixin text-preset-4-bold {
+  @include text-preset-4;
+  font-weight: variables.$text-weight-600;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-coloumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  // align-items: stretch;
+}

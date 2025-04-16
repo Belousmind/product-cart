@@ -1,0 +1,15 @@
+@use './style/variables.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-main;
+  background-color: $rose-50;
+  padding: $space-1100 $space-500;
+}
+
