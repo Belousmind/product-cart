@@ -3,7 +3,10 @@
 
 .cart {
   @include flex-coloumn;
+
   gap: $space-300;
+  width: 100%;
+  max-width: 384px;
   padding: $space-300;
   background: $white;
   border-radius: $space-150;
@@ -17,20 +20,21 @@
 .placeholder {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: $space-200;
-  padding: $space-200 0px;
+  align-items: center;
+  padding: $space-200 0;
 }
 
 .empty-text {
   @include text-preset-4-bold;
+
   color: $rose-500;
 }
 
 .total-text {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   color: $rose-900;
 }
 
@@ -44,11 +48,12 @@
 
 .carbon-container {
   @include flex-center;
+
   gap: $space-100;
   padding: $space-200;
-  border-radius: $space-100;
-  background: $rose-50;
   color: $rose-900;
+  background: $rose-50;
+  border-radius: $space-100;
 }
 
 .carbon-text {
@@ -59,33 +64,18 @@
   @include text-preset-4-bold;
 }
 
-.button-primary {
-  @include flex-center;
-  @include text-preset-3;
-  width: 100%;
-  padding: $space-200 $space-300;
-  border: none;
-  outline: none;
-  background: $red;
-  color: $white;
-  border-radius: 999px;
-  &:hover {
-    background:
-      linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%),
-      $red;
-  }
-}
-
 .cart-content {
   @include flex-coloumn;
+
   gap: $space-300;
 }
 
 .cart-list {
-  border-bottom: 1px $rose-100 solid;
   padding-bottom: $space-300;
+  border-bottom: 1px $rose-100 solid;
+
   &:last-child {
-    border: none;
     padding: 0;
+    border: none;
   }
 }

@@ -7,8 +7,10 @@ import Products from './shared/components/products/products'
 function App() {
   return (
     <Provider store={store}>
-      <Cart />
-      <Products />
+      <main>
+        <Products />
+        <Cart />
+      </main>
     </Provider>
   )
 }

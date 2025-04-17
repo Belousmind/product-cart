@@ -4,11 +4,15 @@ import CartItem from './cart-item'
 import styles from './cart.module.scss'
 import EmptyImg from '@images/illustration-empty-cart.svg'
 import { CarbonTreeIcon } from '@svg'
+import Modal from '@components/modal/modal'
+import { useState } from 'react'
+import ButtonPrimary from '@components/primary-button/primary-button'
+import ConfirmOrder from '@components/confirm-order/confitm-order'
 
 const Cart = () => {
-  const items = useSelector((state: RootState) => state.cart.items)
-  const totalSum = useSelector((state: RootState) => state.cart.totalSum)
-  const totalAmount = useSelector((state: RootState) => state.cart.totalAmount)
+  const { items, totalSum, totalAmount } = useSelector((state: RootState) => state.cart)
+
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className={styles.cart}>
@@ -33,9 +37,12 @@ const Cart = () => {
             <span className={styles['total-sum']}>${totalSum}</span>
           </div>
           <CarbonNeutralInfo />
-          <ButtonPrimary text="Confirm Order" />
+          <ButtonPrimary text="Confirm Order" onClick={() => setIsOpen(true)}/>
         </div>
       )}
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <ConfirmOrder onClose={() => setIsOpen(false)}/>
+      </Modal>
     </div>
   )
 }
@@ -64,8 +71,4 @@ const CarbonNeutralInfo = () => {
       </p>
     </div>
   )
-}
-
-const ButtonPrimary = ({ text }: { text: string }) => {
-  return <button className={styles['button-primary']}>{text}</button>
 }

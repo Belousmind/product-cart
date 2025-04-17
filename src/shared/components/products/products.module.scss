@@ -3,18 +3,19 @@
 
 .products {
   @include flex-coloumn;
+
   gap: $space-400;
 }
 
 .product-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: $space-300;
-  row-gap: $space-400;
+  gap: $space-400 $space-300;
 }
 
 .title {
   @include text-preset-1;
+
   color: $rose-900;
 
 }

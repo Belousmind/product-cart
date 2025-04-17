@@ -4,33 +4,33 @@
 .add-to-cart__active,
 .add-to-cart {
   position: absolute;
+  width: 100%;
+  max-width: 160px;
+  padding: $space-150;
   cursor: pointer;
+  border-radius: 999px;
+  transition: 0.2s ease-out;
   @include text-preset-4;
   @include flex-center;
-
-  padding: $space-150;
-  max-width: 160px;
-  width: 100%;
-  border-radius: 999px;
-  
-  transition: 0.2s ease-out;
 }
 
 .add-to-cart__active {
   @include text-preset-4-bold;
+
   justify-content: space-between;
-  border: 1px solid $red;
   color: $white;
   background: $red;
+  border: 1px solid $red;
+
   svg {
     cursor: pointer;
   }
 }
 
 .add-to-cart {
+  gap: $space-100;
   color: $rose-900;
   background: $white;
-  gap: $space-100;
   border: 1px solid $rose-400;
 
   &:hover {
@@ -40,8 +40,8 @@
 }
 
 .quantity-button {
-  border: none;
-  background: none;
   width: 20px;
   height: 20px;
+  background: none;
+  border: none;
 }

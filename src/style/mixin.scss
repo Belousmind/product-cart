@@ -1,36 +1,38 @@
-@use './variables.scss';
+@use './variables' as *;
 
 @mixin text-preset-1 {
-  font-size: variables.$text-size-1;
-  line-height: variables.$text-height-120;
-  font-weight: variables.$text-weight-700;
+  font-size: $text-size-1;
+  font-weight: $text-weight-700;
+  line-height: $text-height-120;
 }
 
 @mixin text-preset-2 {
-  font-size: variables.$text-size-2;
-  line-height: variables.$text-height-125;
-  font-weight: variables.$text-weight-700;
+  font-size: $text-size-2;
+  font-weight: $text-weight-700;
+  line-height: $text-height-125;
 }
 
 @mixin text-preset-3 {
-  font-size: variables.$text-size-3;
-  line-height: variables.$text-height-150;
-  font-weight: variables.$text-weight-600;
+  font-size: $text-size-3;
+  font-weight: $text-weight-600;
+  line-height: $text-height-150;
 }
 
 @mixin text-preset-4 {
-  font-size: variables.$text-size-4;
-  line-height: variables.$text-height-150;
+  font-size: $text-size-4;
+  line-height: $text-height-150;
 }
 
 @mixin text-preset-4-normal {
   @include text-preset-4;
-  font-weight: variables.$text-weight-400;
+
+  font-weight: $text-weight-400;
 }
 
 @mixin text-preset-4-bold {
   @include text-preset-4;
-  font-weight: variables.$text-weight-600;
+
+  font-weight: $text-weight-600;
 }
 
 @mixin flex-center {
@@ -43,5 +45,11 @@
   display: flex;
   flex-direction: column;
   justify-content: left;
+
   // align-items: stretch;
+}
+
+@mixin grid-center {
+  display: grid;
+  place-items: center;
 }

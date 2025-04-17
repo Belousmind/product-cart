@@ -3,39 +3,47 @@
 
 .item-text {
   @include flex-coloumn;
+
   gap: $space-50;
+
   .category {
     @include text-preset-4;
+
     color: $rose-500;
   }
+
   .name {
     @include text-preset-3;
+
     color: $rose-900;
   }
+
   .price {
     @include text-preset-3;
+
     color: $red;
   }
 }
 
 .product {
   @include flex-coloumn;
+
   gap: $space-200;
   max-width: 251px;
 }
 
 .card-image-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: end;
-  position: relative;
 
   img {
-    // background-color: $rose-300;
-    height: 240px;
     width: 100%;
-    border-radius: $space-100;
+    height: 240px;
     margin-bottom: 22px;
+    object-fit: cover;
+    border-radius: $space-100;
   }
 }
