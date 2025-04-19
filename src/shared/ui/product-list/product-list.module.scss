@@ -1,0 +1,27 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.section {
+  @include flex-coloumn;
+
+  gap: $space-400;
+}
+
+.title {
+  @include text-preset-1;
+
+  color: $rose-900;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-300;
+  justify-content: center;
+
+  @media screen and (width >= 760px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-400 $space-300;
+  }
+}

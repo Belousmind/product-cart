@@ -10,9 +10,13 @@
 
 body {
   @include grid-center;
-  padding: $space-1100 $space-500;
+
+  padding: $space-300;
   font-family: $font-main;
   background-color: $rose-50;
+  @media screen and (width >= 600px) {
+    padding: $space-500;
+  }
 }
 
 button {

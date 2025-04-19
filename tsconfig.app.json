@@ -13,15 +13,15 @@
 
       "@svg": ["src/assets/svg"],
       "@svg/*": ["src/assets/svg/*"],
-   
+
       "@cart": ["src/features/cart"],
       "@cart/*": ["src/features/cart/*"],
 
-      "@components": ["src/shared/ui"],
-      "@components/*": ["src/shared/ui/*"],
+      "@ui": ["src/shared/ui"],
+      "@ui/*": ["src/shared/ui/*"],
 
-      "@style": ["src/style"],
-      "@style/*": ["src/style/*"]
+      "@style": ["src/shared/style"],
+      "@style/*": ["src/shared/style/*"]
     },
 
     /* Bundler mode */

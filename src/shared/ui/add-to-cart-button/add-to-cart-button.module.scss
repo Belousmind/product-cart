@@ -1,0 +1,46 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.add-button,
+.counter {
+  @include text-preset-4-bold;
+
+  position: absolute;
+  gap: $space-100;
+  width: 100%;
+  max-width: 160px;
+  padding: $space-150;
+  border-radius: 999px;
+}
+
+.add-button {
+  @include flex-center;
+
+  color: $rose-900;
+  background: $white;
+  border: 1px solid $rose-400;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: $red;
+      border-color: $red;
+    }
+  }
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $white;
+  background: $red;
+}
+
+.quantity-button {
+  @include wh-20;
+
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: $round-border;
+}
