@@ -4,7 +4,7 @@ import { CartState } from './types'
 const initialState: CartState = {
   items: [],
   totalSum: 0,
-  totalAmount: 0
+  totalAmount: 0,
 }
 
 function recalculateTotal(items: CartState['items']) {
@@ -26,7 +26,7 @@ const cartSlice = createSlice({
       const product = action.payload
       state.items.push({ ...product, amount: 1 })
       state.totalSum = recalculateTotal(state.items)
-      state.totalAmount = state.items.length;
+      state.totalAmount = state.items.length
     },
     incrimentItem: (state, action: PayloadAction<string>) => {
       const name = action.payload
@@ -41,14 +41,27 @@ const cartSlice = createSlice({
       const name = action.payload
       const existing = findItem(state.items, name)
 
-      if (existing) {
+      if (!existing) return
+
+      if (existing.amount > 1) {
         existing.amount -= 1
-        state.totalSum = recalculateTotal(state.items)
+      } else {
+        state.items = state.items.filter((item) => item.name !== name)
       }
+      state.totalSum = recalculateTotal(state.items)
+      state.totalAmount = state.items.length
+    },
+    removeItem: (state, action: PayloadAction<string>) => {
+      const name = action.payload
+
+      state.items = state.items.filter((item) => item.name !== name)
+
+      state.totalSum = recalculateTotal(state.items)
+      state.totalAmount = state.items.length
     },
   },
 })
 
-export const { addToCart, incrimentItem, decrimentItem } = cartSlice.actions
+export const { addToCart, incrimentItem, decrimentItem, removeItem } = cartSlice.actions
 
 export default cartSlice.reducer

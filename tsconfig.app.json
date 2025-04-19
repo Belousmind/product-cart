@@ -17,8 +17,8 @@
       "@cart": ["src/features/cart"],
       "@cart/*": ["src/features/cart/*"],
 
-      "@components": ["src/shared/components"],
-      "@components/*": ["src/shared/components/*"],
+      "@components": ["src/shared/ui"],
+      "@components/*": ["src/shared/ui/*"],
 
       "@style": ["src/style"],
       "@style/*": ["src/style/*"]

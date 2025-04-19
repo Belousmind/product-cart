@@ -10,7 +10,6 @@
 
 body {
   @include grid-center;
-
   padding: $space-1100 $space-500;
   font-family: $font-main;
   background-color: $rose-50;
