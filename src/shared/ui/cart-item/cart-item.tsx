@@ -10,7 +10,6 @@ type CartItemProps = {
 }
 
 const CartItem = ({ title, price, amount }: CartItemProps) => {
-
   const dispatch = useDispatch()
 
   return (
@@ -23,7 +22,10 @@ const CartItem = ({ title, price, amount }: CartItemProps) => {
           ${(amount * price).toFixed(2)}
         </span>
       </span>
-      <button onClick={() => dispatch(removeItem(title))} className={styles['remove-button']}>
+      <button
+        onClick={() => dispatch(removeItem(title))}
+        className={styles['remove-button']}
+      >
         <RemoveItemIcon />
       </button>
     </div>

@@ -5,9 +5,11 @@ type PrimaryButtonProps = {
   onClick: () => void
 }
 
-const PrimaryButton = ({text, onClick}: PrimaryButtonProps) => {
+const PrimaryButton = ({ text, onClick }: PrimaryButtonProps) => {
   return (
-    <button className={styles.button} onClick={onClick}>{text}</button>
+    <button className={styles.button} onClick={onClick}>
+      {text}
+    </button>
   )
 }
 

@@ -5,7 +5,10 @@ const CartInfo = () => {
   return (
     <div className={styles['cart-info']}>
       <CarbonTreeIcon />
-      <span className={styles.text}>This is a <span className={styles['text-bold']}>carbon-neutral</span> delivery</span>
+      <span className={styles.text}>
+        This is a <span className={styles['text-bold']}>carbon-neutral</span>{' '}
+        delivery
+      </span>
     </div>
   )
 }

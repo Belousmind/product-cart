@@ -4,7 +4,7 @@ type CartSummaryProps = {
   summary: number
 }
 
-const CartSummary = ({summary}: CartSummaryProps) => {
+const CartSummary = ({ summary }: CartSummaryProps) => {
   return (
     <div className={styles.summary}>
       <span className={styles.label}>Order Total</span>
@@ -13,4 +13,4 @@ const CartSummary = ({summary}: CartSummaryProps) => {
   )
 }
 
-export default CartSummary;
+export default CartSummary
