@@ -1,0 +1,43 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.order-confirmation,
+.title-info,
+.texts,
+.order-summary {
+  @include flex-coloumn;
+
+  align-items: flex-start;
+}
+
+.order-confirmation {
+  gap: $space-400;
+}
+
+.title-info {
+  gap: $space-300;
+}
+
+.texts {
+  gap: $space-100;
+  color: $rose-500;
+  @include text-preset-4-normal;
+}
+
+.title {
+  @include text-preset-1;
+
+  color: $rose-900;
+}
+
+.order-summary {
+  gap: $space-300;
+  width: 100%;
+  padding: $space-300;
+  background: $rose-50;
+  border-radius: 8px;
+}
+
+.list {
+  width: 100%;
+}
