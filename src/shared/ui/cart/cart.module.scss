@@ -1,0 +1,24 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.cart {
+  gap: $space-300;
+  align-items: flex-start;
+  width: 100%;
+  padding: $space-300;
+  background: $white;
+  border-radius: 12px;
+  @include flex-coloumn;
+  @media screen and (width >= 1110px) {
+    width: 384px;
+  }
+}
+
+.title {
+  color: $red;
+  @include text-preset-2;
+}
+
+.list {
+  width: 100%;
+}

@@ -4,6 +4,7 @@
 .summary {
   gap: $space-100;
   justify-content: space-between;
+  width: 100%;
   color: $rose-900;
   @include flex-align-center;
 }

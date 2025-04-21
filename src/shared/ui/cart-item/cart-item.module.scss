@@ -1,0 +1,53 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.cart-item {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: auto auto;
+  gap: $space-100;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-200 0;
+  color: $rose-500;
+  border-bottom: 1px solid $rose-100;
+  @include text-preset-4-bold;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: $space-300;
+  }
+}
+
+.title {
+  color: $rose-900;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row: 2;
+  grid-column: 1;
+  gap: $space-100;
+}
+
+.amount {
+  color: $red;
+}
+
+.unit-price {
+  @include text-preset-4-normal;
+}
+
+.remove-button {
+  @include flex-center;
+  @include wh-20;
+
+  grid-row: span 2;
+  grid-column: 2;
+  background: none;
+  border: none;
+}

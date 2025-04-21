@@ -1,0 +1,18 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.empty-placeholder {
+  @include flex-coloumn;
+  @include text-preset-4-bold;
+
+  gap: $space-200;
+  align-items: center;
+  width: 100%;
+  padding: $space-200 0;
+  color: $rose-500;
+
+  img {
+    width: 128px;
+    height: 128px;
+  }
+}

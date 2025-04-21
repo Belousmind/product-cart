@@ -25,7 +25,11 @@ button {
 
 main {
   display: flex;
+  flex-direction: column;
   gap: $space-400;
   align-items: flex-start;
   width: 100%;
+  @media screen and (width >= 1110px) {
+    flex-direction: row;
+  }
 }
