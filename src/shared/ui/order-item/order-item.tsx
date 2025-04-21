@@ -1,5 +1,6 @@
 import styles from './order-item.module.scss'
 import data from '../../../data.json'
+
 type OrderItemProps = {
   title: string
   imgSrc?: string

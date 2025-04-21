@@ -1,10 +1,8 @@
 import styles from './order-confirmation.module.scss'
 import { OrderConfirmedIcon } from '@svg'
-import PrimaryButton from '@ui/primary-button/primary-button'
-import CartSummary from '@ui/cart-summary/cart-summary'
+import { PrimaryButton, CartSummary, OrderItem } from '@ui'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store'
-import OrderItem from '@ui/order-item/order-item'
 import { clearCart } from '@cart/cartSlices'
 
 type OrderConfirmationProps = {

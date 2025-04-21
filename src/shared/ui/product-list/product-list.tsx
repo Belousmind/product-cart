@@ -1,6 +1,6 @@
 import styles from './product-list.module.scss'
 import data from '../../../data.json'
-import ProductCard from '@ui/product-card/product-card'
+import { ProductCard } from '@ui'
 
 const ProductList = () => {
   return (

@@ -1,15 +1,17 @@
 import styles from './cart.module.scss'
 import { useSelector } from 'react-redux'
 import { RootState } from 'src/store'
-import CartInfo from '@ui/cart-info/cart-info'
-import CartSummary from '@ui/cart-summary/cart-summary'
 import EmpryCart from '@images/illustration-empty-cart.svg'
-import EmptyPlaceholder from '@ui/empty-placeholder/empty-placeholder'
-import CartItem from '@ui/cart-item/cart-item'
-import PrimaryButton from '@ui/primary-button/primary-button'
 import { useState } from 'react'
-import Modal from '@ui/modal/modal'
-import OrderConfirmation from '@ui/order-confirmation/order-confirmation'
+import {
+  CartInfo,
+  CartSummary,
+  Modal,
+  OrderConfirmation,
+  EmptyPlaceholder,
+  CartItem,
+  PrimaryButton,
+} from '@ui'
 
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(false)

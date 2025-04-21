@@ -1,5 +1,5 @@
 import styles from './product-card.module.scss'
-import AddToCartButton from '@ui/add-to-cart-button/add-to-cart-button'
+import { AddToCartButton } from '@ui'
 import { useSelector } from 'react-redux'
 import { RootState } from 'src/store'
 import clsx from 'classnames'
