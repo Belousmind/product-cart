@@ -64,10 +64,20 @@ const cartSlice = createSlice({
       state.totalSum = recalculateTotal(state.items)
       state.totalAmount = recalculateAmount(state.items)
     },
+    clearCart: (state) => {
+      state.items = []
+      state.totalSum = 0
+      state.totalAmount = 0
+    },
   },
 })
 
-export const { addToCart, incrimentItem, decrimentItem, removeItem } =
-  cartSlice.actions
+export const {
+  addToCart,
+  incrimentItem,
+  decrimentItem,
+  removeItem,
+  clearCart,
+} = cartSlice.actions
 
 export default cartSlice.reducer

@@ -2,15 +2,17 @@ import styles from './order-confirmation.module.scss'
 import { OrderConfirmedIcon } from '@svg'
 import PrimaryButton from '@ui/primary-button/primary-button'
 import CartSummary from '@ui/cart-summary/cart-summary'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'src/store'
 import OrderItem from '@ui/order-item/order-item'
+import { clearCart } from '@cart/cartSlices'
 
 type OrderConfirmationProps = {
   onClose: () => void
 }
 
 const OrderConfirmation = ({ onClose }: OrderConfirmationProps) => {
+  const dispatch = useDispatch()
   const { items, totalSum } = useSelector((state: RootState) => state.cart)
 
   return (
@@ -36,7 +38,13 @@ const OrderConfirmation = ({ onClose }: OrderConfirmationProps) => {
 
         <CartSummary summary={totalSum} />
       </div>
-      <PrimaryButton text="Start New Order" onClick={onClose} />
+      <PrimaryButton
+        text="Start New Order"
+        onClick={() => {
+          onClose()
+          dispatch(clearCart())
+        }}
+      />
     </div>
   )
 }
