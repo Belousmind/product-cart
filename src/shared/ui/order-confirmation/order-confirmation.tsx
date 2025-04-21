@@ -6,7 +6,11 @@ import { useSelector } from 'react-redux'
 import { RootState } from 'src/store'
 import OrderItem from '@ui/order-item/order-item'
 
-const OrderConfirmation = () => {
+type OrderConfirmationProps = {
+  onClose: () => void
+}
+
+const OrderConfirmation = ({ onClose }: OrderConfirmationProps) => {
   const { items, totalSum } = useSelector((state: RootState) => state.cart)
 
   return (
@@ -32,10 +36,7 @@ const OrderConfirmation = () => {
 
         <CartSummary summary={totalSum} />
       </div>
-      <PrimaryButton
-        text="Start New Order"
-        onClick={() => console.log('hii')}
-      />
+      <PrimaryButton text="Start New Order" onClick={onClose} />
     </div>
   )
 }

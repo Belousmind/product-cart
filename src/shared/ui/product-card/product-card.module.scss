@@ -8,6 +8,9 @@
   align-items: left;
   width: 100%;
   max-width: 327px;
+  @media screen and (width >= 480px) {
+    max-width: 213px;
+  }
 }
 
 .top {

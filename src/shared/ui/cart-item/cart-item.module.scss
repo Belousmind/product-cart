@@ -24,6 +24,7 @@
 
 .title {
   color: $rose-900;
+  @include truncate-text;
 }
 
 .details {

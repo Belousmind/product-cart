@@ -7,45 +7,55 @@ import EmpryCart from '@images/illustration-empty-cart.svg'
 import EmptyPlaceholder from '@ui/empty-placeholder/empty-placeholder'
 import CartItem from '@ui/cart-item/cart-item'
 import PrimaryButton from '@ui/primary-button/primary-button'
+import { useState } from 'react'
+import Modal from '@ui/modal/modal'
+import OrderConfirmation from '@ui/order-confirmation/order-confirmation'
 
 const Cart = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   const { items, totalSum, totalAmount } = useSelector(
     (state: RootState) => state.cart
   )
 
   return (
-    <div className={styles.cart}>
-      <h2 className={styles.title}>Your Cart ({totalAmount})</h2>
+    <>
+      <div className={styles.cart}>
+        <h2 className={styles.title}>Your Cart ({totalAmount})</h2>
 
-      {items.length === 0 && (
-        <EmptyPlaceholder
-          imgSrc={EmpryCart}
-          text="Your added items will appear here"
-        />
-      )}
-
-      {items.length > 0 && (
-        <>
-          <div className={styles.list}>
-            {items.map((item) => (
-              <CartItem
-                key={item.name}
-                title={item.name}
-                amount={item.amount}
-                price={item.price}
-              />
-            ))}
-          </div>
-
-          <CartSummary summary={totalSum} />
-          <CartInfo />
-          <PrimaryButton
-            text="Confirm Order"
-            onClick={() => console.log('hi')}
+        {items.length === 0 && (
+          <EmptyPlaceholder
+            imgSrc={EmpryCart}
+            text="Your added items will appear here"
           />
-        </>
-      )}
-    </div>
+        )}
+
+        {items.length > 0 && (
+          <>
+            <div className={styles.list}>
+              {items.map((item) => (
+                <CartItem
+                  key={item.name}
+                  title={item.name}
+                  amount={item.amount}
+                  price={item.price}
+                />
+              ))}
+            </div>
+
+            <CartSummary summary={totalSum} />
+            <CartInfo />
+            <PrimaryButton
+              text="Confirm Order"
+              onClick={() => setIsOpen(true)}
+            />
+          </>
+        )}
+      </div>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <OrderConfirmation onClose={() => setIsOpen(false)} />
+      </Modal>
+    </>
   )
 }
 

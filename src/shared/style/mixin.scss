@@ -60,3 +60,10 @@
   width: 20px;
   height: 20px;
 }
+
+@mixin truncate-text {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
