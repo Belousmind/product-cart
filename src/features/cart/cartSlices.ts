@@ -11,6 +11,10 @@ function recalculateTotal(items: CartState['items']) {
   return items.reduce((sum, item) => sum + item.price * item.amount, 0)
 }
 
+function recalculateAmount(items: CartState['items']) {
+  return items.reduce((sum, item) => sum + item.amount, 0)
+}
+
 function findItem(items: CartState['items'], name: string) {
   return items.find((item) => item.name === name)
 }
@@ -26,7 +30,7 @@ const cartSlice = createSlice({
       const product = action.payload
       state.items.push({ ...product, amount: 1 })
       state.totalSum = recalculateTotal(state.items)
-      state.totalAmount = state.items.length
+      state.totalAmount = recalculateAmount(state.items)
     },
     incrimentItem: (state, action: PayloadAction<string>) => {
       const name = action.payload
@@ -35,6 +39,7 @@ const cartSlice = createSlice({
       if (existing) {
         existing.amount += 1
         state.totalSum = recalculateTotal(state.items)
+        state.totalAmount = recalculateAmount(state.items)
       }
     },
     decrimentItem: (state, action: PayloadAction<string>) => {
@@ -49,7 +54,7 @@ const cartSlice = createSlice({
         state.items = state.items.filter((item) => item.name !== name)
       }
       state.totalSum = recalculateTotal(state.items)
-      state.totalAmount = state.items.length
+      state.totalAmount = recalculateAmount(state.items)
     },
     removeItem: (state, action: PayloadAction<string>) => {
       const name = action.payload
@@ -57,7 +62,7 @@ const cartSlice = createSlice({
       state.items = state.items.filter((item) => item.name !== name)
 
       state.totalSum = recalculateTotal(state.items)
-      state.totalAmount = state.items.length
+      state.totalAmount = recalculateAmount(state.items)
     },
   },
 })
