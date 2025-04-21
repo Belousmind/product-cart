@@ -1,0 +1,17 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.summary {
+  gap: $space-100;
+  justify-content: space-between;
+  color: $rose-900;
+  @include flex-align-center;
+}
+
+.label {
+  @include text-preset-4;
+}
+
+.value {
+  @include text-preset-2;
+}

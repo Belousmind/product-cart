@@ -1,0 +1,16 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.cart-info {
+  gap: $space-100;
+  padding: $space-200;
+  color: $rose-900;
+  background: $rose-50;
+  border-radius: 8px;
+  @include flex-center;
+  @include text-preset-4-normal;
+}
+
+.text-bold {
+  @include text-preset-4-bold;
+}

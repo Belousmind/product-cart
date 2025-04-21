@@ -1,0 +1,20 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+
+.button {
+  @include flex-center;
+  @include text-preset-3;
+
+  padding: $space-200;
+  color: $white;
+  background: $red;
+  border: none;
+  border-radius: $round-border;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background:
+        linear-gradient(0deg, rgb(0 0 0 / 25%) 0%, rgb(0 0 0 / 25%) 100%),
+        $red;
+    }
+  }
+}
