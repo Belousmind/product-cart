@@ -39,7 +39,7 @@
 
 .details {
   display: grid;
-  grid-template-columns: 21px auto;
+  grid-template-columns: minmax(21px, max-content) minmax(50px, max-content);
   grid-row: 2;
   grid-column: 2;
   gap: $space-100;

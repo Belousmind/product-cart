@@ -29,7 +29,9 @@
 
 .details {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns:
+    minmax(21px, max-content) minmax(50px, max-content)
+    minmax(47px, max-content);
   grid-row: 2;
   grid-column: 1;
   gap: $space-100;
