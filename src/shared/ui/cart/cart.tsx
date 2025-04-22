@@ -12,7 +12,7 @@ import {
   CartItem,
   PrimaryButton,
 } from '@ui'
-
+import { AnimatePresence } from 'framer-motion'
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -35,14 +35,16 @@ const Cart = () => {
         {items.length > 0 && (
           <>
             <div className={styles.list}>
-              {items.map((item) => (
-                <CartItem
-                  key={item.name}
-                  title={item.name}
-                  amount={item.amount}
-                  price={item.price}
-                />
-              ))}
+              <AnimatePresence>
+                {items.map((item) => (
+                  <CartItem
+                    key={item.name}
+                    title={item.name}
+                    amount={item.amount}
+                    price={item.price}
+                  />
+                ))}
+              </AnimatePresence>
             </div>
 
             <CartSummary summary={totalSum} />
