@@ -13,7 +13,7 @@ const AnimatedCounter = ({ num }: AnimatedCounterProps) => {
         <div style={{ height: 40, display: 'flex' }}>
           {changedNumber.map((item, index) => (
             <motion.span
-              key={`${item}-${index}`}
+              key={`${num}-${index}`}
               style={{ display: 'block' }}
               initial={{ y: '20px', opacity: 0 }}
               animate={{ y: '0px', opacity: 1 }}

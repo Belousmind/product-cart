@@ -28,16 +28,24 @@ const CartItem = ({ title, price, amount }: CartItemProps) => {
 
     if (!isPresent) {
       const exitAnimation = async () => {
-        await animate('span', {
-          opacity: 0.4,
-        })
+        await animate(
+          'span',
+          {
+            opacity: 0.4,
+            color: '#c73b0f',
+          },
+          {
+            duration: 0.05,
+            ease: 'easeInOut',
+          }
+        )
         await animate(
           scope.current,
           {
             opacity: 0,
             x: -24,
           },
-          { ease: 'backIn', delay: 0.15 }
+          { ease: 'backIn', delay: 0.05 }
         )
         safeToRemove()
       }

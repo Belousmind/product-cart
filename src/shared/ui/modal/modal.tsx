@@ -14,12 +14,17 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
     }
 
     if (isOpen) {
+      const scrollBarWidth =
+        window.innerWidth - document.documentElement.clientWidth
+
       document.body.style.overflow = 'hidden'
+      document.body.style.paddingRight = `${scrollBarWidth}px`
       window.addEventListener('keydown', handleKeyDown)
     }
 
     return () => {
       document.body.style.overflow = 'auto'
+      document.body.style.paddingRight = '0px'
       window.removeEventListener('keydown', handleKeyDown)
     }
   }, [isOpen, onClose])
