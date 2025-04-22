@@ -24,7 +24,9 @@ const CartItem = ({ title, price, amount }: CartItemProps) => {
         { opacity: 1, x: 0 },
         { duration: 0.3, ease: 'backOut' }
       )
-    } else {
+    }
+
+    if (!isPresent) {
       const exitAnimation = async () => {
         await animate('span', {
           opacity: 0.4,
