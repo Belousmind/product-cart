@@ -17,8 +17,14 @@
   @include flex-center;
 
   color: $rose-900;
+  outline-color: $red;
   background: $white;
   border: 1px solid $rose-400;
+
+  &:active {
+    color: $red;
+    border-color: $red;
+  }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -39,8 +45,24 @@
 .quantity-button {
   @include wh-20;
 
+  @include flex-center;
+
   padding: 0;
-  background: none;
-  border: none;
+  color: $white;
+  outline-color: $rose-100;
+  background: $red;
+  border: 1.2px solid $white;
   border-radius: $round-border;
+  transition: 0.2s ease-out;
+
+  &:active {
+    color: $red;
+    background-color: $white;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: $red;
+      background-color: $white;
+    }
+  }
 }

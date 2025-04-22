@@ -51,6 +51,19 @@
 
   grid-row: span 2;
   grid-column: 2;
+  color: $rose-400;
+  outline-color: $rose-500;
   background: none;
   border: none;
+  border-radius: $round-border;
+  transition: 0.2s ease-out;
+
+  &:active {
+    color: $rose-500;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: $rose-900;
+    }
+  }
 }
