@@ -11,12 +11,9 @@
 body {
   @include grid-center;
 
-  padding: $space-300;
   font-family: $font-main;
   background-color: $rose-50;
-  @media screen and (width >= 600px) {
-    padding: $space-500;
-  }
+
 }
 
 button {
@@ -29,7 +26,11 @@ main {
   gap: $space-400;
   align-items: flex-start;
   width: 100%;
+  padding: $space-300;
   @media screen and (width >= 1110px) {
     flex-direction: row;
+  }
+  @media screen and (width >= 600px) {
+    padding: $space-500;
   }
 }
