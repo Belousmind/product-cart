@@ -6,11 +6,6 @@ import clsx from 'classnames'
 import { isMobile, isTablet, isDesktop } from 'react-device-detect'
 import { useState, useEffect } from 'react'
 
-console.log('Мобильное устройство:', isMobile)
-console.log('Планшет:', isTablet)
-console.log('Десктоп:', isDesktop)
-console.log(isTablet && isMobile)
-
 type ProductCardProps = {
   image: {
     thumbnail: string
