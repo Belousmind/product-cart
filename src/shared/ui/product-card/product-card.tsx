@@ -3,24 +3,44 @@ import { AddToCartButton } from '@ui'
 import { useSelector } from 'react-redux'
 import { RootState } from 'src/store'
 import clsx from 'classnames'
+import { isMobile, isTablet, isDesktop } from 'react-device-detect'
+import { useState, useEffect } from 'react'
+
+console.log('Мобильное устройство:', isMobile)
+console.log('Планшет:', isTablet)
+console.log('Десктоп:', isDesktop)
+console.log(isTablet && isMobile)
 
 type ProductCardProps = {
-  image: string
+  image: {
+    thumbnail: string
+    mobile: string
+    tablet: string
+    desktop: string
+  }
   name: string
   category: string
   price: number
 }
 
 const ProductCard = ({ image, name, category, price }: ProductCardProps) => {
+  const [imageSrc, setImageSrc] = useState(image.desktop)
+
   const isInCart = useSelector((state: RootState) =>
     state.cart.items.some((item) => item.name === name)
   )
+
+  useEffect(() => {
+    if (isDesktop) return setImageSrc(image.desktop)
+    if (isTablet && isMobile) return setImageSrc(image.tablet)
+    if (isMobile) return setImageSrc(image.mobile)
+  }, [])
 
   return (
     <div className={styles.card}>
       <div className={styles.top}>
         <img
-          src={image}
+          src={imageSrc}
           alt={name}
           className={clsx(styles.image, isInCart && styles.imageActive)}
         />

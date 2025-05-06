@@ -8,15 +8,17 @@ const ProductList = () => {
       <h2 className={styles.title}>Desserts</h2>
 
       <div className={styles.grid}>
-        {data.map((item) => (
-          <ProductCard
-            key={item.name}
-            name={item.name}
-            category={item.category}
-            price={item.price}
-            image={item.image.desktop}
-          />
-        ))}
+        {data.map((item) => {
+          return (
+            <ProductCard
+              key={item.name}
+              name={item.name}
+              category={item.category}
+              price={item.price}
+              image={item.image}
+            />
+          )
+        })}
       </div>
     </section>
   )
