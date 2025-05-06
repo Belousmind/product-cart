@@ -34,7 +34,7 @@ const OrderConfirmation = ({ onClose }: OrderConfirmationProps) => {
           ))}
         </div>
 
-        <CartSummary summary={totalSum} />
+        <CartSummary summary={totalSum} animated={false} />
       </div>
       <PrimaryButton
         text="Start New Order"

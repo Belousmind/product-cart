@@ -47,7 +47,7 @@ const Cart = () => {
               </AnimatePresence>
             </div>
 
-            <CartSummary summary={totalSum} />
+            <CartSummary summary={totalSum} animated={true} />
             <CartInfo />
             <PrimaryButton
               text="Confirm Order"

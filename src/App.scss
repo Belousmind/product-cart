@@ -13,7 +13,6 @@ body {
 
   font-family: $font-main;
   background-color: $rose-50;
-
 }
 
 button {
@@ -21,8 +20,8 @@ button {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  @include flex-coloumn;
+
   gap: $space-400;
   align-items: flex-start;
   width: 100%;
