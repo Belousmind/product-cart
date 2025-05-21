@@ -1,0 +1,35 @@
+@use '@style/variables.scss' as *;
+@use '@style/mixin.scss' as *;
+@import 'https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  @include grid-center;
+
+  font-family: $font-main;
+  background-color: $rose-50;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  @include flex-coloumn;
+
+  gap: $space-400;
+  align-items: flex-start;
+  width: 100%;
+  padding: $space-300;
+  @media screen and (width >= 1110px) {
+    flex-direction: row;
+  }
+  @media screen and (width >= 600px) {
+    padding: $space-500;
+  }
+}
