@@ -26,9 +26,13 @@ const ProductCard = ({ image, name, category, price }: ProductCardProps) => {
   )
 
   useEffect(() => {
-    if (isDesktop) return setImageSrc(image.desktop)
-    if (isTablet && isMobile) return setImageSrc(image.tablet)
-    if (isMobile) return setImageSrc(image.mobile)
+    if (isDesktop) {
+      setImageSrc(image.desktop)
+    } else if (isTablet && isMobile) {
+      setImageSrc(image.tablet)
+    } else if (isMobile) {
+      setImageSrc(image.mobile)
+    }
   }, [])
 
   return (

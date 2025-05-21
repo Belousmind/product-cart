@@ -10,7 +10,7 @@
   width: 100%;
   max-width: 160px;
   padding: $space-150;
-  border-radius: 999px;
+  border-radius: $round-border;
 }
 
 .add-button {
@@ -35,8 +35,8 @@
 }
 
 .counter {
-  display: flex;
-  align-items: center;
+  @include flex-align-center;
+
   justify-content: space-between;
   color: $white;
   background: $red;
@@ -44,7 +44,6 @@
 
 .quantity-button {
   @include wh-20;
-
   @include flex-center;
 
   padding: 0;

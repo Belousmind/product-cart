@@ -56,6 +56,7 @@ const Cart = () => {
           </>
         )}
       </div>
+
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <OrderConfirmation onClose={() => setIsOpen(false)} />
       </Modal>
