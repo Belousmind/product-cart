@@ -1,7 +1,7 @@
 import styles from './cart.module.scss'
 import { useSelector } from 'react-redux'
 import { RootState } from 'src/store'
-import EmpryCart from '@images/illustration-empty-cart.svg'
+import EmpryCart from '/images/illustration-empty-cart.svg'
 import { useState } from 'react'
 import {
   CartInfo,
